@@ -13,13 +13,13 @@ const userSchema = mongoose.Schema({
         unique: true,
         match: [/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, 'Please add a valid email address'],
     },
-    friends: [
+    thoughts: [
         {
             type: Schema.Types.ObjectId,
             ref: 'thoughts'
         }
     ],
-    reactions: [
+    friends: [
         {
             type: Schema.Types.ObjectId,
             ref: 'users'
@@ -31,6 +31,10 @@ const userSchema = mongoose.Schema({
         getters: true
     },
     id: false
+})
+
+userSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
 })
 
 const User = model('users', userSchema);
