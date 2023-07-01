@@ -23,7 +23,7 @@ module.exports = {
             res.status(500).json({message: err})
         }
     },
-    async postThought(req, res) {
+    async createThought(req, res) {
         try {
             const thought = await Thought.create(req.body);
             const user = await User.findOneAndUpdate(
