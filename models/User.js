@@ -15,13 +15,13 @@ const userSchema = mongoose.Schema({
     },
     thoughts: [
         {
-            type: Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: 'thoughts'
         }
     ],
     friends: [
         {
-            type: Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: 'users'
         }
     ]
@@ -37,6 +37,6 @@ userSchema.virtual('friendCount').get(function() {
     return this.friends.length;
 })
 
-const User = model('users', userSchema);
+const User = mongoose.model('users', userSchema);
 
 module.exports = User

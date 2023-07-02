@@ -32,11 +32,11 @@ module.exports = {
                 { new: true }
             )
 
-            if (!user) {
-                return res.status(400).json({message: 'User does not exist!'})
+            if (!thought) {
+                return res.status(400).json({message: 'Thought cannot be found thus cannot be created!!'})
             }
 
-            res.json({message: 'Create Post!'})
+            res.json({message: 'Thought Created!'})
         } catch (err) {
             res.status(500).json(err);
         }
@@ -45,7 +45,7 @@ module.exports = {
     async updateThought(req, res) {
         try {
             const thought = await Thought.findOneAndUpdate(
-                { _id: req.params.thoughId },
+                { _id: req.params.thoughtId },
                 { $set: req.body},
                 { new: true}
             )
@@ -63,7 +63,7 @@ module.exports = {
     async deleteThought(req, res) {
         try {
             const thought = await Thought.findOneAndDelete(
-                { _id: req.params.thoughId },
+                { _id: req.params.thoughtId },
                 { new: true }
             )
 
@@ -90,7 +90,7 @@ module.exports = {
                 return res.status(400).json({message: 'No thought found with this id!'})
             }
 
-            res.json({message: 'Reaction was removed successfully!'})
+            res.json({message: 'Reaction was created successfully!'})
         } catch (err) {
            res.status(500).json({message: err}) 
         }
