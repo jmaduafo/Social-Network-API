@@ -8,4 +8,5 @@
 
 [screen-capture (10).webm](https://github.com/jmaduafo/Social-Network-API/assets/87540591/9c351b50-a5ff-411b-bb58-b0e5ca3974dc)
 
+[screen-capture (12).webm](https://github.com/jmaduafo/Social-Network-API/assets/87540591/57a647ae-cedf-4112-9c38-6c25a466e0d1)
 
